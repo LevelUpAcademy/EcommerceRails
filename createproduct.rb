@@ -1,0 +1,1 @@
+Product.create({title: "SSD Kingstone 256gb", briefing: "Armazenamento de alto desempenho",description: "Armazenamento de alta velocidade, recomendado para gamers e editores",price: 750,quantity: 500});

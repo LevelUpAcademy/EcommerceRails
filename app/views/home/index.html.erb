@@ -1,0 +1,11 @@
+<h2>Ultimos produtos</h2>
+
+<div class="products">
+  <% @products.each do |product|%>
+    <div class="item">
+      <h3><%= product.title %></h3>
+      <p><%= product.briefing %></p>
+      <p><%= product.price %></p>
+    </div>
+  <% end %>
+</div>
