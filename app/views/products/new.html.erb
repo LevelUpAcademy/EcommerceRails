@@ -1,0 +1,27 @@
+<h2>Cadastro de produto</h2>
+<hr>
+
+<%= form_for @product, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+  <div class="form-group">
+    <label for="title" class="form-label">Nome</label>
+    <%= f.text_field :title %>
+  </div>
+  <div class="form-group">
+    <label for="briefing" class="form-label">Chamada</label>
+    <%= f.text_area :briefing, size: "60x6" %>
+  </div>
+  <div class="form-group">
+    <label for="description" class="form-label">Descricao</label>
+    <%= f.text_area :description, size: "60x12" %>
+  </div>
+  <div class="form-group">
+    <label for="price" class="form-label">Preco</label>
+    <%= f.text_field :price %>
+  </div>
+  <div class="form-group">
+    <label for="quantity" class="form-label">Quantidade</label>
+    <%= f.text_field :quantity %>
+  </div>
+
+  <%= f.submit "Cadastrar", class: [:btn] %>
+<% end %>
