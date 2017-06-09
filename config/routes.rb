@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   root 'home#index'
 
   scope :admin do
+    get 'products/all'
+    get 'products/details/:id' => 'products#details'
     get 'products/new'
     post 'products/create'
   end

@@ -1,0 +1,24 @@
+<h2>Todos os produtos</h2>
+<hr>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Briefing</th>
+      <th>Preco</th>
+      <th>Quantidade</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <% @products.each do |p| %>
+    <tr>
+      <td><%= p.title %></td>
+      <td><%= p.briefing %></td>
+      <td>R$ <%= p.price %></td>
+      <td><%= p.quantity %></td>
+      <td><a href="/admin/products/details/<%= p.id %>">Exibir</a></td>
+      <td>Editar</td>
+    </tr>
+  <% end %>
+</table>
