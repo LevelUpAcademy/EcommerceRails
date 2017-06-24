@@ -15,4 +15,8 @@ class ProductsController < ApplicationController
   def details
     @product = Product.find(params[:id])
   end
+
+  def info
+    @product = Product.find(params[:id])
+  end
 end

@@ -1,11 +1,25 @@
-<h2>Ultimos produtos</h2>
+<h2 class="subtitle">Ultimos produtos</h2>
 
-<div class="products">
+<div class="columns">
   <% @products.each do |product|%>
-    <div class="item">
-      <h3><%= product.title %></h3>
-      <p><%= product.briefing %></p>
-      <p><%= product.price %></p>
+    <div class="column is-one-third">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            <%= product.title %>
+          </p>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            <%= product.briefing %>
+            <br>
+            <%= product.price %>
+          </div>
+        </div>
+        <footer class="card-footer">
+          <a href="/products/info/<%= product.id %>" class="card-footer-item">Detalhes</a>
+        </footer>
+      </div>
     </div>
   <% end %>
 </div>
