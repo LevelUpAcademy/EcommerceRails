@@ -4,5 +4,10 @@
 
 <br>
 <div class="block">
-  <a class="button is-primary">Comprar</a>
+  <%= form_for(:cart_products, remote: true, url:  carts_add_to_cart_path, html: {class: 'product-actions'}) do |f|%>
+    <%= hidden_field_tag "product_id", @product.id %>
+    <div class="product-buy">
+      <%= f.submit "Comprar", class: 'button is-primary buy' %>
+    </div>
+  <% end %>
 </div>

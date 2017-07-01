@@ -1,0 +1,9 @@
+<h2>Meu carrinho</h2>
+<hr>
+
+<% @cart.cart_products.each do |cart_item| %>
+  <h3><%= cart_item.product.title %></h3>
+  <strong>R$ <%= cart_item.product.price %></strong>
+  <hr>
+
+<% end %>
