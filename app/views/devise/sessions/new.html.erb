@@ -1,4 +1,8 @@
 
+<div class="field">
+  <labe><%= flash[:alert] %></labe>
+</div>
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <label>Insira seu email</label><br />
