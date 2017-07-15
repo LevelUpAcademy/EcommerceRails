@@ -13,14 +13,29 @@ class CartsController < ApplicationController
       redirect_to new_user_session_path
     else
       if current_user.carts == nil || current_user.carts.count == 0
-        puts "CRIANDO CARRINHO"
         current_user.carts.create
       end
-      puts "ADICIONANDO PRODUTO AO CARRINHO"
-      puts params[:product_id]
       current_user.carts.last.cart_products.create(product_id: params[:product_id])
-      puts "REDIRECIONANDO PARA HOME"
-      redirect_to root_path
+      redirect_to carts_my_path
     end
   end
+
+  def rm
+    id_item = params[:id]
+    item = current_user.carts.last.cart_products.find(id_item)
+    item.destroy
+    redirect_to carts_my_path
+  end
 end
+
+
+# Outras maneiras de adicionar produtos nos carrinhos
+# Cart.create({user_id: current_user.id})
+# current_user.carts.create
+#
+# CartProduct.create({product_id: 10, cart_id: 5})
+# product = Product.find(5)
+# product.cart_products.create({cart_id: 5})
+#
+# cart = Cart.find(10)
+# cart.cart_products.create({product_id: 5})

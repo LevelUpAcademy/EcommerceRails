@@ -1,10 +1,12 @@
 <h2 class="title is-2"><%= @product.title %></h2>
 <hr>
 <p><%= @product.description %></p>
-
 <br>
 <div class="block">
-  <%= form_for(:cart_products, remote: true, url:  carts_add_to_cart_path, html: {class: 'product-actions'}) do |f|%>
+  <%= form_for(:cart_products, remote: true,
+  url:  carts_add_to_cart_path,
+  html: {class: 'product-actions'}) do |f|%>
+
     <%= hidden_field_tag "product_id", @product.id %>
     <div class="product-buy">
       <%= f.submit "Comprar", class: 'button is-primary buy' %>

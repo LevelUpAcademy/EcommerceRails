@@ -6,3 +6,4 @@ Projeto de estudos da turma de Ruby on Rails dos Sabados 8am
 * Lucas Cerqueira
 * Lucas Lutz
 * Fred Korsh
+* Patrick Statzner
