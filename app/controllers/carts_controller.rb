@@ -29,17 +29,22 @@ class CartsController < ApplicationController
 
   def checkout
     @cart_products = current_user.carts.last.cart_products
+
     @total = 0
     @cart_products.each do |p|
       @total += p.product.price
     end
+
   end
 
   def pay
     valor = params[:valor]
+
     puts "FINALIZANDO COMPRA:"
     puts "Usuario #{current_user.email}"
     puts "Valor da compra #{valor}"
+
+    # aqui seria processado o pagamento (gerado nota fiscal...)
 
     current_user.carts.last.destroy
     redirect_to carts_thanks_path

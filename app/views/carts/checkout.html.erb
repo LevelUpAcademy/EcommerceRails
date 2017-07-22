@@ -1,10 +1,12 @@
 <h2 class="title">Finalizando pedido</h2>
 <hr>
 
-<p>Valor total: R$ <strong><%= @total %></strong></p>
+<p>Valor total: <strong>R$ <%= @total %></strong></p>
 
 <%= form_tag "pay" do %>
+  <%= token_tag %>
   <%= hidden_field_tag "valor", @total %>
+  <br>
   <%= submit_tag "Pagar", class: 'button is-primary' %>
 <% end %>
 
