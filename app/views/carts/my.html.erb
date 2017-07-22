@@ -1,10 +1,15 @@
 <h2>Meu carrinho</h2>
+<% if @cart != nil %>
+  <%= link_to "Finalizar pedido", carts_checkout_path %>
+<% end %>
 <hr>
 
-<% @cart.cart_products.each do |cart_item| %>
-  <h3><%= cart_item.product.title %></h3>
-  <strong>R$ <%= cart_item.product.price %></strong>
-  <p><%= cart_item.product.briefing %></p>
-  <%= link_to "x", remove_cart_item_path(cart_item.id), method: :delete %>
-  <hr>
+<% if @cart != nil %>
+  <% @cart.cart_products.each do |cart_item| %>
+    <h3><%= cart_item.product.title %></h3>
+    <strong>R$ <%= cart_item.product.price %></strong>
+    <p><%= cart_item.product.briefing %></p>
+    <%= link_to "x", remove_cart_item_path(cart_item.id), method: :delete %>
+    <hr>
+  <% end %>
 <% end %>

@@ -1,0 +1,17 @@
+<h2 class="title">Finalizando pedido</h2>
+<hr>
+
+<p>Valor total: R$ <strong><%= @total %></strong></p>
+
+<%= form_tag "pay" do %>
+  <%= hidden_field_tag "valor", @total %>
+  <%= submit_tag "Pagar", class: 'button is-primary' %>
+<% end %>
+
+<hr>
+<h2>Produtos no carrinho:</h2>
+<% @cart_products.each do |cart_item| %>
+  <h3><%= cart_item.product.title %></h3>
+  <strong>R$ <%= cart_item.product.price %></strong>
+  <hr>
+<% end %>
